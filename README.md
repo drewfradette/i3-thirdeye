@@ -1,6 +1,6 @@
 # Thirdeye
 
-TODO: Write a gem description
+A ruby framework for simplifying i3wm scripting.
 
 ## Installation
 
@@ -18,7 +18,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Several scripts are provided with the gem in `bin/`.
+
+  * `i3-window-jump`<sup>1</sup> - Jumps to an open window.
+  * `i3-windows` - A listing of each window's name.
+  * `i3-workspace-jump`<sup>1</sup> - Jump to an existing or new workspace.
+  * `i3-workspace-swap` - Switches two workspaces between outputs. Multi-monitor only.
+  * `i3-workspaces` - A listing of each workspace. Prefers the workspace's name over number.
+
+  <sup>1</sup>: Relies on `dmenu`.
 
 ## Contributing
 
