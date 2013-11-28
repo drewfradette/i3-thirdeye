@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'thirdeye'
+
+module Thirdeye
+  run "workspace #{dmenu(Workspace.list)}"
+end

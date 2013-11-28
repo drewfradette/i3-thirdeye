@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'thirdeye'
+
+puts Thirdeye::Workspace.all.collect{|ws| ws.name || ws.num}.join("\n")

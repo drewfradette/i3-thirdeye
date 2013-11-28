@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+require 'thirdeye'
+
+module Thirdeye
+  Window.all.tap do |windows|
+    dmenu(windows.collect{|w| w.name}).tap do |selection|
+      exit 0 if selection.nil?
+      run "[con_id=#{windows.detect{|w| w.name == selection}.id}] focus"
+    end
+  end
+end

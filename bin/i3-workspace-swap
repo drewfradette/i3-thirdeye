@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'thirdeye'
+
+module Thirdeye
+  Workspace.all.select{|ws| ws.visible?}.tap do |workspaces|
+    unless workspaces.size == 2
+      puts "ERR: #{$0} is intended to work with exactly two workspaces"
+      exit 1
+    end
+
+    workspaces.each do |workspace|
+      run "workspace #{workspace.name}, move workspace to output right"
+    end
+
+    run "workspace #{workspaces.detect{|ws| ws.focused?}.name}"
+  end
+end
